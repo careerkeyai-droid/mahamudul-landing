@@ -6,18 +6,19 @@
     <title>Mahamudul Hasan | Career Consultant</title>
     <meta
       name="description"
-      content="Dynamic and modern landing page for career consultant Mahamudul Hasan."
+      content="Clean, modern and welcoming landing page for career consultant Mahamudul Hasan."
     />
     <style>
       :root {
-        --bg: #070b18;
-        --surface: #10182f;
-        --surface-2: #111f3f;
-        --text: #f8fafc;
-        --muted: #9fb2d7;
-        --line: #1e2b4a;
-        --primary: #4f8cff;
-        --secondary: #5eead4;
+        --bg: #f9fafc;
+        --surface: #ffffff;
+        --surface-soft: #f3f6fb;
+        --text: #111827;
+        --muted: #667085;
+        --line: #e5e9f2;
+        --primary: #3b82f6;
+        --primary-deep: #2563eb;
+        --accent: #10b981;
         --radius: 20px;
       }
 
@@ -34,34 +35,23 @@
         font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
         color: var(--text);
         background:
-          radial-gradient(circle at 12% 10%, #1a2a55 0%, transparent 28%),
-          radial-gradient(circle at 88% 5%, #163f5e 0%, transparent 26%),
-          linear-gradient(180deg, #070b18 0%, #050811 100%);
+          radial-gradient(circle at 5% 0%, #eef4ff 0%, transparent 30%),
+          radial-gradient(circle at 95% 0%, #ebfff8 0%, transparent 28%),
+          var(--bg);
         line-height: 1.5;
       }
 
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-        background-size: 26px 26px;
-        pointer-events: none;
-        opacity: 0.3;
-        z-index: -1;
-      }
-
       .container {
-        width: min(1120px, 92%);
+        width: min(1140px, 92%);
         margin: 0 auto;
       }
 
       header {
         position: sticky;
         top: 0;
-        z-index: 30;
-        backdrop-filter: saturate(160%) blur(14px);
-        background: rgba(7, 11, 24, 0.66);
+        z-index: 40;
+        backdrop-filter: blur(10px);
+        background: rgba(246, 248, 252, 0.88);
         border-bottom: 1px solid var(--line);
       }
 
@@ -73,10 +63,9 @@
       }
 
       .brand {
-        font-size: 0.95rem;
+        font-size: 0.98rem;
         font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
+        letter-spacing: 0.02em;
       }
 
       .links {
@@ -104,38 +93,45 @@
         border-radius: 999px;
         padding: 0.68rem 1.08rem;
         font-weight: 500;
-        border: 1px solid #2b3e68;
+        border: 1px solid var(--line);
         transition: 0.2s ease;
         font-size: 0.92rem;
+        background: var(--surface);
+        color: var(--text);
       }
 
       .btn-primary {
-        background: linear-gradient(130deg, #4f8cff, #59c4ff);
-        color: #03112b;
+        background: linear-gradient(130deg, var(--primary), #66a3ff);
+        color: #ffffff;
         border-color: transparent;
-        font-weight: 700;
+        font-weight: 600;
       }
 
       .btn-primary:hover {
+        background: linear-gradient(130deg, var(--primary-deep), #4d8ef8);
         transform: translateY(-1px);
-        box-shadow: 0 10px 24px rgba(79, 140, 255, 0.35);
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.22);
+      }
+
+      .btn:hover {
+        border-color: #cdd7e6;
       }
 
       main {
-        padding: 2.5rem 0 4rem;
+        padding: 2.2rem 0 4rem;
       }
 
       .hero {
         display: grid;
-        grid-template-columns: 1.08fr 0.92fr;
+        grid-template-columns: 1.1fr 0.9fr;
         gap: 1rem;
         align-items: stretch;
       }
 
       .tag {
         display: inline-block;
-        background: rgba(94, 234, 212, 0.12);
-        color: var(--secondary);
+        background: #eaf2ff;
+        color: var(--primary);
         font-size: 0.73rem;
         letter-spacing: 0.06em;
         font-weight: 700;
@@ -143,18 +139,33 @@
         padding: 0.34rem 0.75rem;
         margin-bottom: 1rem;
         text-transform: uppercase;
-        border: 1px solid rgba(94, 234, 212, 0.35);
+        border: 1px solid #d9e5ff;
       }
 
       .hero-main,
       .hero-side {
         border: 1px solid var(--line);
-        background: linear-gradient(180deg, rgba(20, 31, 59, 0.9), rgba(10, 16, 32, 0.9));
+        background: var(--surface);
         border-radius: var(--radius);
+        box-shadow: 0 12px 30px rgba(14, 24, 42, 0.06);
       }
 
       .hero-main {
         padding: clamp(1.5rem, 3vw, 3rem);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-main::after {
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        right: -120px;
+        bottom: -130px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.22), transparent 72%);
+        pointer-events: none;
       }
 
       .hero-side {
@@ -164,12 +175,12 @@
       }
 
       h1 {
-        font-size: clamp(2rem, 4.2vw, 3.6rem);
-        line-height: 1.08;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        line-height: 1.07;
         letter-spacing: -0.02em;
         margin: 0 0 0.9rem;
-        max-width: 13ch;
-        font-weight: 600;
+        max-width: 12.5ch;
+        font-weight: 700;
       }
 
       .lead {
@@ -196,7 +207,12 @@
         padding: 0.95rem 0.85rem;
         border: 1px solid var(--line);
         border-radius: 14px;
-        background: rgba(255, 255, 255, 0.02);
+        background: var(--surface-soft);
+        transition: transform 0.2s ease;
+      }
+
+      .stat:hover {
+        transform: translateY(-2px);
       }
 
       .stat strong {
@@ -211,12 +227,12 @@
       }
 
       section {
-        padding: 4rem 0;
+        padding: 3.7rem 0;
       }
 
       .section-head {
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 1.9rem;
       }
 
       .section-head p {
@@ -240,15 +256,16 @@
 
       .card {
         border: 1px solid var(--line);
-        background: linear-gradient(180deg, rgba(19, 29, 56, 0.88), rgba(11, 17, 35, 0.88));
+        background: var(--surface);
         border-radius: var(--radius);
         padding: 1.25rem;
-        transition: transform 0.25s ease, border-color 0.25s ease;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       }
 
       .card:hover {
         transform: translateY(-4px);
-        border-color: #2f4678;
+        border-color: #ced8e8;
+        box-shadow: 0 16px 34px rgba(20, 30, 60, 0.08);
       }
 
       .card h3 {
@@ -273,7 +290,7 @@
         border: 1px solid var(--line);
         border-radius: 14px;
         padding: 0.95rem 1rem;
-        background: rgba(17, 31, 63, 0.6);
+        background: var(--surface);
         display: flex;
         align-items: flex-start;
         gap: 0.9rem;
@@ -283,8 +300,8 @@
         min-width: 28px;
         height: 28px;
         border-radius: 50%;
-        background: rgba(79, 140, 255, 0.2);
-        color: #93c5fd;
+        background: #ecfff7;
+        color: #059669;
         display: grid;
         place-items: center;
         font-size: 0.85rem;
@@ -299,7 +316,7 @@
 
       .about-block {
         border: 1px solid var(--line);
-        background: linear-gradient(180deg, rgba(19, 29, 56, 0.88), rgba(11, 17, 35, 0.88));
+        background: var(--surface);
         border-radius: var(--radius);
         padding: 1.35rem;
       }
@@ -315,23 +332,58 @@
 
       .quote {
         margin: 0 0 0.8rem;
-        color: #dce8ff;
+        color: #1e293b;
       }
 
       .cta {
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        padding: 1.6rem;
+        padding: 1.7rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
-        background: linear-gradient(120deg, rgba(79, 140, 255, 0.2), rgba(94, 234, 212, 0.08));
+        background: linear-gradient(120deg, #eaf2ff, #ecfff7);
       }
 
       .cta p {
         margin: 0.35rem 0 0;
         color: var(--muted);
+      }
+
+      .marquee {
+        margin-top: 0.9rem;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--surface-soft);
+      }
+
+      .marquee-track {
+        display: flex;
+        gap: 2rem;
+        padding: 0.65rem 1rem;
+        min-width: max-content;
+        animation: scrollX 18s linear infinite;
+        color: var(--muted);
+        font-size: 0.87rem;
+      }
+
+      .trust-row {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .trust-pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        text-align: center;
+        padding: 0.55rem 0.65rem;
+        color: var(--muted);
+        font-size: 0.83rem;
       }
 
       footer {
@@ -366,15 +418,29 @@
         }
       }
 
+      @keyframes scrollX {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
       @media (max-width: 900px) {
         .hero,
         .grid-3,
-        .about {
+        .about,
+        .trust-row {
           grid-template-columns: 1fr;
         }
 
         .links a:not(.btn) {
           display: none;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -398,71 +464,91 @@
     <main class="container">
       <section class="hero">
         <article class="hero-main fade-up">
-          <span class="tag">Career Consultant</span>
-          <h1>Make your career strategy feel alive.</h1>
+          <span class="tag">Executive Career Consultant</span>
+          <h1>Elevate your career with precision.</h1>
           <p class="lead">
-            Mahamudul Hasan helps students and professionals find direction,
-            position themselves better, and convert potential into real offers.
+            Mahamudul Hasan advises ambitious professionals on direction,
+            positioning, and high-value opportunities.
           </p>
           <div class="actions">
-            <a href="#contact" class="btn btn-primary">Start your plan</a>
-            <a href="#services" class="btn">Explore services</a>
+            <a href="#contact" class="btn btn-primary">Reserve consultation</a>
+            <a href="#services" class="btn">View services</a>
+          </div>
+          <div class="marquee">
+            <div class="marquee-track">
+              <span>Career Direction</span>
+              <span>Resume & LinkedIn</span>
+              <span>Interview Confidence</span>
+              <span>Offer Negotiation</span>
+              <span>Goal Tracking</span>
+              <span>Career Direction</span>
+              <span>Resume & LinkedIn</span>
+              <span>Interview Confidence</span>
+              <span>Offer Negotiation</span>
+              <span>Goal Tracking</span>
+            </div>
+          </div>
+          <div class="trust-row">
+            <div class="trust-pill">Bespoke 1:1 advisory</div>
+            <div class="trust-pill">Strategic clarity</div>
+            <div class="trust-pill">Executive readiness</div>
+            <div class="trust-pill">Measured outcomes</div>
           </div>
         </article>
         <aside class="hero-side fade-up delay-1">
-          <div class="stat"><strong class="counter" data-target="300">0</strong><span>Clients guided</span></div>
-          <div class="stat"><strong class="counter" data-target="180">0</strong><span>Placements</span></div>
-          <div class="stat"><strong class="counter" data-target="49">0</strong><span>Avg rating (x10)</span></div>
-          <div class="stat"><strong class="counter" data-target="7">0</strong><span>Years of experience</span></div>
+          <div class="stat"><strong class="counter" data-target="300">0</strong><span>Clients advised</span></div>
+          <div class="stat"><strong class="counter" data-target="180">0</strong><span>Placements secured</span></div>
+          <div class="stat"><strong class="counter" data-target="49">0</strong><span>Client rating (x10)</span></div>
+          <div class="stat"><strong class="counter" data-target="7">0</strong><span>Years of specialist expertise</span></div>
         </aside>
       </section>
 
       <section id="services">
         <div class="section-head fade-up">
-          <h2>High-impact services built for outcomes</h2>
-          <p>From clarity to interviews, every step is practical and trackable.</p>
+          <h2>Signature services. Distinct outcomes.</h2>
+          <p>Precision support for ambitious career moves.</p>
         </div>
         <div class="grid-3">
           <article class="card fade-up delay-1">
-            <h3>Career Direction</h3>
-            <p>Define a focused path based on your strengths, goals, and market reality.</p>
+            <h3>Career Positioning Strategy</h3>
+            <p>Define your next move with strategic precision.</p>
           </article>
           <article class="card fade-up delay-2">
-            <h3>Personal Brand and Positioning</h3>
-            <p>Optimize CV and LinkedIn to communicate your value quickly and clearly.</p>
+            <h3>Brand Refinement: CV and LinkedIn</h3>
+            <p>Present a profile that signals immediate value.</p>
           </article>
           <article class="card fade-up delay-3">
-            <h3>Interview and Offer Strategy</h3>
-            <p>Practice delivery, improve confidence, and negotiate with structure.</p>
+            <h3>Interview and Offer Negotiation</h3>
+            <p>Perform with confidence. Negotiate from strength.</p>
           </article>
         </div>
       </section>
 
       <section id="process">
         <div class="section-head fade-up">
-          <h2>A process that keeps your momentum high</h2>
-          <p>Simple steps, measurable outputs, and consistent guidance.</p>
+          <h2>A refined process.</h2>
+          <p>Clarity, execution, momentum.</p>
         </div>
         <div class="timeline">
           <article class="timeline-item fade-up">
             <div class="bullet">1</div>
             <div>
-              <h3>Discovery Session</h3>
-              <p class="lead">We map your current status, ideal direction, and key blockers.</p>
+              <h3>Strategic Discovery Session</h3>
+              <p class="lead">Assess your position, ambition, and key constraints.</p>
             </div>
           </article>
           <article class="timeline-item fade-up delay-1">
             <div class="bullet">2</div>
             <div>
-              <h3>Action Blueprint</h3>
-              <p class="lead">You get a clear roadmap with priorities for the next 30-90 days.</p>
+              <h3>Tailored Career Blueprint</h3>
+              <p class="lead">Receive a focused roadmap for the next 30-90 days.</p>
             </div>
           </article>
           <article class="timeline-item fade-up delay-2">
             <div class="bullet">3</div>
             <div>
-              <h3>Execution Support</h3>
-              <p class="lead">Regular check-ins and feedback ensure progress does not stall.</p>
+              <h3>Advisory Support and Accountability</h3>
+              <p class="lead">Sustain progress with expert feedback and accountability.</p>
             </div>
           </article>
         </div>
@@ -471,33 +557,31 @@
       <section id="about" class="about">
         <article class="about-block fade-up">
           <p class="eyebrow">About</p>
-          <h2>Strategy that turns uncertainty into clear action</h2>
+          <h2>Strategic advisory. Personal attention.</h2>
           <p class="lead">
-            Each engagement is tailored to your goals and pace. You get focused
-            guidance, direct feedback, and practical steps you can execute now.
+            Mahamudul Hasan combines market insight and strategic coaching to
+            guide high-confidence decisions.
           </p>
           <p class="lead">
-            The goal is simple: build confidence, improve visibility, and convert
-            effort into offers.
+            The outcome: stronger positioning, sharper execution, better offers.
           </p>
         </article>
         <article class="about-block fade-up delay-1">
           <p class="eyebrow">Client feedback</p>
           <p class="quote">
-            "I moved from confusion to confidence. My CV and interviews improved,
-            and I landed a role aligned with my long-term goals."
+            "Clear strategy, sharper profile, and a role aligned with my long-term goals."
           </p>
-          <p><strong>- Recent Client</strong></p>
+          <p><strong>- Private Client</strong></p>
         </article>
       </section>
 
       <section id="contact" class="cta">
         <div>
-          <p class="eyebrow">Next step</p>
-          <h2>Ready for a clearer career path?</h2>
-          <p>Book a one-on-one session with Mahamudul Hasan.</p>
+          <p class="eyebrow">Begin your next chapter</p>
+          <h2>Reserve your private consultation.</h2>
+          <p>Premium guidance for your next decisive move.</p>
         </div>
-        <a class="btn btn-primary" href="mailto:mahamudulhasan@email.com">Book consultation</a>
+        <a class="btn btn-primary" href="mailto:mahamudulhasan@email.com">Request consultation</a>
       </section>
     </main>
 
